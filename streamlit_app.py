@@ -11,9 +11,10 @@ streamlit.text("🐔 Hard Boiled Free-Range Egg")
 streamlit.text("🥑🍞 Avocado Toast")
 
 streamlit.header("🍌🥭 Build your own smoothie 🥝🍇")
-
+my_fruit_list = my_fruit_list.set_index("Fruit")
 #Pick up fruits from the list 
 streamlit.multiselect("Pick up some fruits", list(my_fruit_list.index))
 
 #Display the fruit list on the page
 streamlit.dataframe(my_fruit_list)
+
