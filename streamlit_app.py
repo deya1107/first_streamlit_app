@@ -12,9 +12,11 @@ streamlit.text("🥑🍞 Avocado Toast")
 
 streamlit.header("🍌🥭 Build your own smoothie 🥝🍇")
 my_fruit_list = my_fruit_list.set_index("Fruit")
+
 #Pick up fruits from the list 
-streamlit.multiselect("Pick up some fruits:", list(my_fruit_list.index), ["Avocado","Strawberries"])
+fruit_selected = streamlit.multiselect("Pick up some fruits:", list(my_fruit_list.index), ["Avocado","Strawberries"])
+fruit_show = my_fruit_list.loc[fruit_selected]
 
 #Display the fruit list on the page
-streamlit.dataframe(my_fruit_list)
+streamlit.dataframe(fruit_show)
 
